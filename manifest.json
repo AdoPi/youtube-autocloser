@@ -7,8 +7,7 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*.youtube.com/*", "*://*.youtu.be/*"],
-			"js": ["yt-autocloser.js"],
-			"css": ["yt-autocloser.css"]
+			"js": ["yt-autocloser.js"]
 		}
 	],
 
