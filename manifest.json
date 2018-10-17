@@ -1,0 +1,29 @@
+{
+	"name": "Youtube AutoCloser",
+	"version": "1.0",
+	"description": "Automagically close the current Youtube tab at the end of videos",
+	"manifest_version": 2,
+
+	"content_scripts": [
+		{
+			"matches": ["*://*.youtube.com/*", "*://*.youtu.be/*"],
+			"js": ["yt-autocloser.js"],
+			"css": ["yt-autocloser.css"]
+		}
+	],
+
+	"icons": {
+		"48": "icons/icon-48.png",
+		"480": "icons/icon-480.png"
+	},
+
+	"permissions": [
+		"tabs",
+		"activeTab"
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+	}
+}
+
