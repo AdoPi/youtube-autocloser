@@ -5,7 +5,7 @@ This extension enables you to close the current playing Youtube tab at the end o
 
 This leads to two awesome features:
 
-## PlaylistTab feature:
+## PlaylistTab feature
 
 You want to watch several videos but you can't watch them all at once? 
 Open them in tabs (right click, new tab). 
