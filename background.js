@@ -3,9 +3,34 @@
 // MIT License
 var browser = browser || chrome;
 
+var isDisable = false;
 
-// open donation page
+
+function enable() {
+	browser.tabs.sendMessage(tab.id, 'enabled');
+	browser.browserAction.setBadgeText({text:'ON'});
+	browser.browserAction.setBadgeBackgroundColor({color:'green'});
+}
+
+function disable() {
+	browser.browserAction.setBadgeText({text:'OFF'});
+	browser.browserAction.setBadgeBackgroundColor({color:'red'});
+}
+
+browser.browserAction.onClicked.addListener(function(tab){
+	// change background color icon and toggle activation
+	if (isDisable) {
+		enable();
+	} else {
+		disable();
+	}
+	isDisable = !isDisable;
+});
+
 browser.runtime.onInstalled.addListener(function(){
+	// Enable extension
+	enable();
+	// Open donation page
 	browser.tabs.create({url:'pages/donation.html'});
 });
 
@@ -23,7 +48,8 @@ browser.runtime.onConnect.addListener(function(port) {
 	port.onMessage.addListener(function(msg){
 		browser.tabs.query({ url: msg }, function(tabs) {
 			if (tabs && tabs[0]) {
-				browser.tabs.remove(tabs[0].id);
+				if (!isDisable)
+					browser.tabs.remove(tabs[0].id);
 			}
 		});
 	});

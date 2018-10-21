@@ -16,7 +16,13 @@
 		"480": "icons/icon-480.png"
 	},
 
+	"browser_action": {
+		"default_title": "Toggle Youtube AutoCloser",
+		"matches": ["*://*.youtube.com/*", "*://*.youtu.be/*"]
+	},	
+
 	"permissions": [
+		"contextMenus",
 		"tabs",
 		"activeTab"
 	],
