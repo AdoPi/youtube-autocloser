@@ -17,7 +17,11 @@
 	},
 
 	"browser_action": {
-		"default_title": "Toggle Youtube AutoCloser"
+		"default_title": "Toggle Youtube AutoCloser",
+		"default_icon": {
+			"48": "icons/icon-48.png",
+			"480": "icons/icon-480.png"
+		}
 	},	
 
 	"permissions": [
