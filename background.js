@@ -7,7 +7,6 @@ var isDisable = false;
 
 
 function enable() {
-	browser.tabs.sendMessage(tab.id, 'enabled');
 	browser.browserAction.setBadgeText({text:'ON'});
 	browser.browserAction.setBadgeBackgroundColor({color:'green'});
 }
@@ -20,6 +19,7 @@ function disable() {
 browser.browserAction.onClicked.addListener(function(tab){
 	// change background color icon and toggle activation
 	if (isDisable) {
+		browser.tabs.sendMessage(tab.id, 'enabled');
 		enable();
 	} else {
 		disable();
