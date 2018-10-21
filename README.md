@@ -1,3 +1,6 @@
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/adopi)
+
 # youtube-autocloser
 Youtube extension for Chrome and Firefox
 
